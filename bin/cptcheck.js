@@ -7,5 +7,10 @@ const package = require('../package.json');
 
 program
     .version(package.version)
-    .command('key', 'Manage API key for https://nomics.com')
+    .command('key', 'Manage API key for https://nomics.com');
+
+program
+    .command('check', 'Check crypto-currency price info');
+
+program
     .parse(process.argv);
