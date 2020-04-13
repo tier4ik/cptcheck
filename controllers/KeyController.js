@@ -30,11 +30,20 @@ module.exports = {
             return key;
         }
     },
-    remove() {
-        const keyToDelete = store.get('key');
-        if (!keyToDelete) throw new Error('You doesn`t have API key for https://nomics.com');
-        store.delete('key');
-        console.log('API key ' + keyToDelete + ' has been removed');
-        return keyToDelete;
+    async remove() {
+        const input = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'deleteConfirmed',
+                message: 'Do you really want to delete API key'.magenta
+            }
+        ])
+        if (input.deleteConfirmed) {
+            const keyToDelete = store.get('key');
+            if (!keyToDelete) throw new Error('You doesn`t have API key for https://nomics.com');
+            store.delete('key');
+            console.log('API key ' + keyToDelete + ' has been removed');
+            return keyToDelete;
+        }
     }
 }
