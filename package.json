@@ -1,0 +1,14 @@
+{
+  "name": "cptcheck",
+  "version": "1.0.0",
+  "description": "crypto-currency price checking node cli",
+  "main": "index.js",
+  "bin": {
+    "cptcheck": "./bin/cptcheck.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max <tier4ik>",
+  "license": "ISC"
+}
