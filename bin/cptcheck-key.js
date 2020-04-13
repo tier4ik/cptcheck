@@ -1,24 +1,20 @@
 const program = require('commander');
 
+const keyController = require('../controllers/KeyController.js');
+
 program
     .command('set')
     .description('Sets new API key')
-    .action(() => {
-        console.log('new key has been set')
-    });
+    .action(keyController.set);
 
 program
-    .command('get')
-    .description('Sets new API key')
-    .action(() => {
-        console.log('key')
-    });
+    .command('show')
+    .description('Shows API key')
+    .action(keyController.show);
 
 program
     .command('remove')
-    .description('Sets new API key')
-    .action(() => {
-        console.log('key has been removed')
-    });
+    .description('Removes API key')
+    .action(keyController.remove);
 
 program.parse(process.argv);
