@@ -1,11 +1,9 @@
-const Configstore = require('configstore');
 const inquirer = require('inquirer');
 const colors = require('colors');
 
-const packageJson = require('../package.json');
 const isRequired = require('../utils/validation.js');
 
-const store = new Configstore(packageJson.name);
+const store = require('../store/store.js');
 
 module.exports = {
     async set() {
